@@ -27,10 +27,10 @@ Prove the projection equations (eq. 1.2 and 1.3 in chapter_01_simplesystem.pdf) 
 
 ![](pics/1.21.3.png)
 
-There are three hypotheses in this simple vision system.
-1.	The camera center (x0, y0) is inside the plane X=0
-2.	The horizontal axis of camera (x) is parallel to the ground plane (Y=0)
-3.	The camera is tilted so that the line connecting the origin of the world coordinates system and the image center is perpendicular to the image plane
+There are three hypotheses in this simple vision system.\
+1.	The camera center (x0, y0) is inside the plane X=0\
+2.	The horizontal axis of camera (x) is parallel to the ground plane (Y=0)\
+3.	The camera is tilted so that the line connecting the origin of the world coordinates system and the image center is perpendicular to the image plane\
 
 - To prove equation **1.2**, we know that x is parallel to the ground plane, therefore x-axis in the camera plane is parallel to the X-axis in the 3D world. We can make any shift on the X-axis and the shift will be carried over to the x-axis with a resolution factor $\alpha$ which is a constant, but without any change in magnitude. However, since (0, 0, 0) in the 3D world is mapped to (x0, y0), we will need to add x0 to any shift made on the X-axis to reflect the actual coordinates in the camera plane. Therefore, we have x = $\alpha$X + x0.
 
