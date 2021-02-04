@@ -14,11 +14,11 @@ The goal of this first exercise is to take images with different settings of a c
 
 You will have to play with the distance between the camera and the scene, and with the zoom (or amount of cropping) so that both images look as similar as possible only differing in the type of projection (similar to figure 1.4, in the lecture 1 notes). Submit the two pictures and label out clearly which parts of the images reveal their projection types.
 
-## Perspective Projection
+## 1.1 Perspective Projection
 
 ![](pics/perspective.jpg)
 
-## Orthographic Projection
+## 1.2 Orthographic Projection
 
 ![](pics/orthographic.jpg)
 
@@ -45,14 +45,30 @@ In the Lecture slide, we have written all the derivative constraints for Y(x,y).
 # Problem 4. Approximation of derivatives (10pts)
 Fill the missing kernels (lines 51 and 65 in Build Constraints) in the script *SimpleWorld.ipynb*.
 Please include your answers also in the report.
-- The problem 4.1 (lines 51) is from Sobel operators.
-- The problem 4.2 (lines 65) is from Laplacian operators.
 
-![](pics/)
+1. The problem 4.1 (lines 51) is from Sobel operators.
+  - $\partial$Y/$\partial$t = -ny * $\partial$Y/$\partial$x + nx * $\partial$Y/$\partial$y (lecture 3 p.26)
+  
+2. The problem 4.2 (lines 65) is from Laplacian operators.
+  - $\partial^2$y/$\partial$$y^2$
+  
+![](pics/problem4.png)
 
 # Problem 5. Run the code (10pts)
-Select some of the images included with the code and show some new view points on them. You can also try with new images taken by you if you decide to create your own simple world.
+Select some of the images included with the code and show some new view points on them. You can also try with new images taken by you if you decide to create your own simple world.\
 
+## 5.1 I choose "steps.png" for the example
+
+![](pics/problem5_stepsoutput1.png)
+
+## 5.2 Render Image
+
+![](pics/problem5_stepsoutput2.png)
+
+
+## 5.3 3D reconstruction
+
+![](pics/problem5_stepsoutput3.png)
 
 # Problem 6. Violating simple world assumptions (5pts)
 Find one example from the four images provided with the problem set (img1.jpg, ..., img4.jpg) when the recovery of 3D information fails. Include the image and the reconstruction in your writeup, and explain why it fails.
