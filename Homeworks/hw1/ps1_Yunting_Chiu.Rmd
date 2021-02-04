@@ -58,6 +58,11 @@ Please include your answers also in the report.
 Select some of the images included with the code and show some new view points on them. You can also try with new images taken by you if you decide to create your own simple world.\
 
 ## 5.1 I choose "steps.png" for the example
+Classify in to 4 categories:
+- 3D orientation: vertical
+- 3D orientation: horizontal
+- Occlusion edges
+- Contact edges
 
 ![](pics/problem5_stepsoutput1.png)
 
@@ -67,19 +72,18 @@ Select some of the images included with the code and show some new view points o
 
 
 ## 5.3 3D reconstruction
+- I changed output angle to `ax.view_init(20, -120)`
 
 ![](pics/problem5_stepsoutput3.png)
 
 # Problem 6. Violating simple world assumptions (5pts)
-Find one example from the four images provided with the problem set (img1.jpg, ..., img4.jpg) when the recovery of 3D information fails. Include the image and the reconstruction in your writeup, and explain why it fails.
-- I ran 3D reconstruction code and found **img2.png** was fail to recover the 3D cube. According to Generic view assumption, we can see the green cube is stake on the red cube, 
-
+Find one example from the four images provided with the problem set (img1.jpg, ..., img4.jpg). When the recovery of 3D information fails. Include the image and the reconstruction in your writeup, and explain why it fails.
+- I found **img3** is fail to 3D reconstruction
 
 # Problem 7. The real world (Extra 5pts)
 A research problem is a question for which we do not know the answer. In fact, there might
 not even be an answer. This question is optional and could be extended into a larger course
 project.\
-- 
 
 The goal of this problem is to test the 3D reconstruction code with real images. A number
 of the assumptions we have made will not work when the input are real images of more
@@ -89,3 +93,5 @@ background segmentation will not work with other scenes.\
 Try taking pictures of real-world scenes (not the cubes) and propose modifications to the
 scheme proposed in this lecture so that you can get some better 3D reconstructions. The goal
 is not to build a general system, but to be able to handle a few more situations.\
+
+
