@@ -78,7 +78,11 @@ Classify in to 4 categories:
 
 # Problem 6. Violating simple world assumptions (5pts)
 Find one example from the four images provided with the problem set (img1.jpg, ..., img4.jpg). When the recovery of 3D information fails. Include the image and the reconstruction in your writeup, and explain why it fails.
-- I found **img3** is fail to 3D reconstruction
+
+I found **img3** is fail to reconstruct a 3D object. According to Generic view assumption, the view that the observer sees from different angles might not be the same as that in real world. That is, the observer might see the same 2D image, but it does not mean the observer see the same object in 3D world.\
+In **img3**, the green cube is above the red cube and the blue cube is closely attached to the red cube so the algorithm cannot precisely distinguish horizontal and vertical edges on three cubes separately. Thus, the output of simple world would be failed.
+
+![](pics/problem6_img3.png)
 
 # Problem 7. The real world (Extra 5pts)
 A research problem is a question for which we do not know the answer. In fact, there might
