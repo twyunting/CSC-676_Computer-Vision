@@ -38,9 +38,69 @@ There are three hypotheses in this simple vision system.\
 - To prove equation **1.3**, we need to be reminded that the Z-axis does not look like is pointing towards the observer. Instead, the Z-axis is identical to the Y-axis up to a sign change and a scaling. A point moving parallel to the Z-axis will be indistinguishable from a point moving down parallel to the Y-axis. Therefore, y is a linear combination of Y and Z. Using the same method as above, we first make a shift on Y and calculate the corresponding shift on the camera plane and then make a shift on Z and calculate the distance moved from (x0, y0). Using trigonometry, we can easily know that the shift on Y projecting onto the camera plane is equal to cos($\theta$)Y and the shift on Z projecting onto the camera plane is equal to sin($\theta$)Z. Taking the difference between Y and Z, multiplying by the resolution factor and add y0 because (0, 0, 0) is mapped to (x0, y0). Therefore, we have y = $\alpha$(cos($\theta$)Y - sin($\theta$)Z) + Y0
 
 # Problem 3. Constraints (10pts)
-In the Lecture slide, we have written all the derivative constraints for Y(x,y). Write the constraints for Z(x,y).
+In the Lecture slide, we have written all the derivative constraints for Y(x,y). Write the constraints for Z(x,y).\
 
+According to the projection equations, we have
 
+$$
+x = \partial\ X + xo
+$$
+$$
+y = \partial\ (\cos(\theta)Y - \sin(\theta)Z) + yo
+$$
+
+Since we are interested in the constraints for Z(x, y), we are going to only focus on the second equation.\
+
+- We first solve for Z
+
+$$
+y = \partial\cos(\theta)Y - \partial\sin(\theta)Z + yo
+$$
+
+$$
+\partial\sin(\theta)Z = \partial\cos(\theta)Y - y + yo
+$$
+
+$$
+Z = \frac{\cos(\theta)Y}{\sin(\theta)}-\frac{y-yo}{\partial\sin(\theta)}
+$$
+
+## If (x, y) belongs to a vertical edge.
+- We then take derivative of Z with respect to y.
+
+$$
+\frac{\partial Z}{\partial Y} = -\frac{1}{\sin(\theta)} 
+$$
+
+## If (x, y) belongs to a horizontal edge.
+- And then we take derivative of Z with respect to t where t is a vector parallel to the edge.
+
+$$
+t = (-ny, nx)
+$$
+
+$$
+\frac{\partial Z}{\partial t} = -ny \frac{\partial Z}{\partial x} + nx \frac{\partial Z}{\partial y} = -ny \frac{\partial Z}{\partial x} - nx \frac{1}{\sin(\theta)} 
+$$
+
+$$
+
+$$
+
+## If (x, y) does not belong to a edge
+- Lastly, we take second derivatives to account for the cases where there are no edges
+
+$$
+\frac{\partial^2 Z}{\partial x^2} = 0
+$$
+
+$$
+\frac{\partial^2 Z}{\partial y^2} = 0
+$$
+
+$$
+\frac{\partial^2 Z}{\partial x \partial y} = 0
+$$
 
 # Problem 4. Approximation of derivatives (10pts)
 Fill the missing kernels (lines 51 and 65 in Build Constraints) in the script *SimpleWorld.ipynb*.
