@@ -43,7 +43,7 @@ In the Lecture slide, we have written all the derivative constraints for Y(x,y).
 According to the projection equations, we have
 
 $$
-x = \partial\ X + xo
+x = \partial X + xo
 $$
 $$
 y = \partial\ (\cos(\theta)Y - \sin(\theta)Z) + yo
@@ -73,18 +73,17 @@ $$
 $$
 
 ## If (x, y) belongs to a horizontal edge.
-- And then we take derivative of Z with respect to t where t is a vector parallel to the edge.
+
+- **t** is a vector parallel to the edge.
 
 $$
 t = (-ny, nx)
 $$
 
+- And then we take derivative of Z with respect to t.
+
 $$
 \frac{\partial Z}{\partial t} = -ny \frac{\partial Z}{\partial x} + nx \frac{\partial Z}{\partial y} = -ny \frac{\partial Z}{\partial x} - nx \frac{1}{\sin(\theta)} 
-$$
-
-$$
-
 $$
 
 ## If (x, y) does not belong to a edge
@@ -118,11 +117,12 @@ Please include your answers also in the report.
 Select some of the images included with the code and show some new view points on them. You can also try with new images taken by you if you decide to create your own simple world.\
 
 ## 5.1 I choose "steps.png" for the example
-Classify in to 4 categories:
-- 3D orientation: vertical
-- 3D orientation: horizontal
-- Occlusion edges
-- Contact edges
+
+Classify in to 4 categories:\
+- 3D orientation: vertical\
+- 3D orientation: horizontal\
+- Occlusion edges\
+- Contact edges\
 
 ![](pics/problem5_stepsoutput1.png)
 
