@@ -158,4 +158,8 @@ Try taking pictures of real-world scenes (not the cubes) and propose modificatio
 scheme proposed in this lecture so that you can get some better 3D reconstructions. The goal
 is not to build a general system, but to be able to handle a few more situations.\
 
+- It's hard to recover 3D objects because compared to cube images, the real-world image has more complicated edges and colors. The image file called *problem7 realWorld.png* that I took in real-world scenes. Based on the screenshot below, after running the 3D reconstruction model, it cannot produce any output, which means that the XYZ edges of this image have not been successfully detected by this model. Our solution is to rework the XYZ surface constraints, solve equations that deviate from non-linear images to 3D space.
 
+![](pics/problem7_realWorld.png)
+
+![](pics/problem7_output.png)
