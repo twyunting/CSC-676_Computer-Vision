@@ -7,9 +7,10 @@ Created on Sun Feb  8 16:15:29 2015
 from scipy import misc
 import matplotlib.pyplot as plt
 import numpy as np
+import cv2
 
 # read in an image using mis. 
-img = misc.imread('einstein.png',flatten=1)
+img = cv2.imread('einstein.png', 0)
 
 f = np.fft.fft2(img)
 fshift = np.fft.fftshift(f)
@@ -23,7 +24,7 @@ plt.show()
 
 # removing the high frequencies 
 rows, cols = img.shape
-crow, ccol = rows/2 , cols/2     # center
+crow, ccol = rows//2 , cols//2     # center
 # create a mask first, center square is 1, remaining all zeros
 mask = np.zeros((rows, cols), np.uint8)
 mask[crow-30:crow+30, ccol-30:ccol+30] = 1
