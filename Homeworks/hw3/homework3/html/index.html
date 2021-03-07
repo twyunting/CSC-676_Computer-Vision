@@ -137,16 +137,17 @@ td img {
 <h2>CSC 476/676 AU / Homework 3 / Image Blending Using Pyramids</h2>
 
 <div style="float: right; padding: 20px">
-<img src="placeholder.jpg" />
-<p style="font-size: 14px">Example of a right floating element.</p>
+<img src="../pics/appnge.png" />
+<p style="font-size: 16px" align="center">This fruit is called "appnge"</p>
 </div>
 
-<p> Suppose we start with two images: apple and orange. We need to blend two image into one, consider taking the left half of the apple and combine it beside each other with the right half of the orange to create a blending picture. However, If we combine these two directly, the blending picture will be very unnatural, and we 'll see the middle line split between apple and orange. The main idea is </p>
+<p> Suppose we start with two images: apple and orange. We need to blend two image into one, consider taking the left half of the apple and combine it beside each other with the right half of the orange to create a blending picture. However, if we combine these two directly, the blending picture will be very unnatural, and we will see the middle line split between apple and orange. The main idea is that we need to use Gaussian filter (low pass) and Laplacian filter (high pass) to generate pyramids and then smoothly blend two different images into one. Here is a following step: </p>
 
 <ol>
-<li>list element 1.</li>
-<li>list element 2.</li>
-<li>etc.</li>
+<li><strong>def interpolate(image):</strong> Interpolates an image with upsampling rate r=2.This needs to be scaled up since the kernel has a unit area.</li>
+<li><strong>def decimate(image):</strong> Decimates an image with downsampling rate r=2.</li>
+<li><strong>def pyramids(image): </strong> Constructs Gaussian and Laplacian pyramids. G is the Gaussian pytamid, L is the Laplacian pyramid. </li>
+<li><strong>def pyramidBlending(A, B, mask):</strong> We have three images as input: input 1 and input are the images we want to blend with, the third image is the mask image. The mask makes the image blend smooth. </li>
 </ol>
 
 <p> 	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
