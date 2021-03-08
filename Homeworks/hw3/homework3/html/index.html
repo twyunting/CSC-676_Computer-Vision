@@ -148,7 +148,7 @@ td img {
 <li><strong>def interpolate(image):</strong> Interpolates an image with upsampling rate r=2.This needs to be scaled up since the kernel has a unit area.</li>
 <li><strong>def decimate(image):</strong> Decimates an image with downsampling rate r=2.</li>
 <li><strong>def pyramids(image): </strong> Constructs Gaussian and Laplacian pyramids. G is the Gaussian pyramid, L is the Laplacian pyramid. </li>
-<li><strong>def pyramidBlending(A, B, mask):</strong> We have three images as input: input 1 and input 2 are the images we want to blend with, the third image is a mask image. The mask makes the image blend smooth. In this function, we call back the pyramids function spliting to three images to Gaussian and Laplacian pymarid. The picture blends smoothly when the Gaussian filter is applied to the subsampled mask. The mask's aim is to assist us in combining the Laplacian pyramids for both inputs. Finally, we apply the combined Laplacian to the original Gaussian-resized images multiplied by their respective masks to recreate the original image at each dimension. The following formula is<strong> LS(i, j) = GR(I, j)*LA(I, j) + (1-GR(I, j)* LB(I, j))</strong>. </li>
+<li><strong>def pyramidBlending(A, B, mask):</strong> We have three images as input: input 1 and input 2 are the images we want to blend with, the third image is a mask image. The mask makes the image blend smooth. In this function, we call back the pyramids function splitting to three images to Gaussian and Laplacian pymarid. The picture blends smoothly when the Gaussian filter is applied to the subsampled mask. The mask's aim is to assist us in combining the Laplacian pyramids for both inputs. Finally, we apply the combined Laplacian to the original Gaussian-resized images multiplied by their respective masks to recreate the original image at each dimension. The following formula is<strong> LS(i, j) = GR(I, j)*LA(I, j) + (1-GR(I, j)* LB(I, j))</strong>. </li>
 <li><strong>def reconstruct(pyramid):</strong> The next step is reconstructing the pyramids as well as upsampling and add up with each level. We need to reconstruct the original image using laplacian pyrimads of the image. The ideal idea is to reverse the order of the pyramids in order to start with the smallest pyramid.</li>
 <li><strong>def colorBlending(img1, img2, mask):</strong> We know that a combination of three colors, namely Red, Green, and Blue, is an easy way to describe each pixel in image. This is what we are called the RGB image. In this case, we extract the RGB color from two images which we want to blend with, then call back the <strong>reconstruct</strong> and <strong>pyramidBlending</strong> functions we mentioned before to accomplish our final goal.</li>
 
@@ -361,8 +361,51 @@ colorBlending(apple, orange, mask)
 <img src="../pics/case1/output.png"  width="24%"/>
 </td>
 </tr>
+</table>
+<p>
+</p>
 
+<h2>Implement Poisson image blending </h2>
+Example of code in Python<p>
 
+<pre><code># Import libraries
+import numpy as np
+import matplotlib.pyplot as plt
+import cv2
+import imageio
+from google.colab.patches import cv2_imshow
+
+def PoissonImageBlending(source, destination):
+  # create an all "White" mask: 255, if black mask is 0
+  mask = 255 * np.ones(destination.shape, destination.dtype) 
+  # navigate the source img location
+  width, height, channels = source.shape
+  center = (height//2, width//2)
+
+  # using built-in funtion `cv2.seamlessClone` to acommpulish Poisson Image
+  blended = cv2.seamlessClone(destination, source, mask, center, 2) # cv::MIXED_CLONE = 2
+  output = blended
+  imageio.imsave("output.png", output)
+  img = cv2.imread("output.png")
+  cv2_imshow(img)
+
+# run it!!
+source = imageio.imread("dc.jpg")
+destination = imageio.imread("moon.jpeg")
+PoissonImageBlending(source, destination)
+</code></pre>
+
+<h3>Results in a table</h3>
+<p><li>Like Dogecoin, Washington Monument is going to the moon.</li></p>
+<table border=1>
+<tr>
+<td>
+<img src="../pics/Poisson/dc.jpg" width="24%"/>
+<img src="../pics/Poisson/moon.jpeg"  width="24%"/>
+<img src="../pics/Poisson/mask.png" width="24%"/>
+<img src="../pics/Poisson/output.png" width="24%"/>
+</td>
+</tr>
 
 </table>
 <div style="clear:both" >
