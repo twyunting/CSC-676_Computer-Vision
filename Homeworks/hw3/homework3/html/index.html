@@ -247,6 +247,7 @@ def pyramidBlending(A, B, mask):
   blend = []
   for i in range(len(LA)):
     # LS = np.max(Gmask[i])*LA[i] + (1-np.max(Gmask[i]))*LB[i]
+    # make sure the color with in 255 (white)
     LS = Gmask[i]/255*LA[i] + (1-Gmask[i]/255)*LB[i]
     blend.append(LS)
   return blend
