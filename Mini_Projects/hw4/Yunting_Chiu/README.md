@@ -301,6 +301,8 @@ How can we solve the problem if the motion is multidirectional? If there are sev
         print("Only for google colab")
 
 ### Results in a table
+- Please click the images to see the videos of Magnification with Phase-Based Motion Processing
+
 | Original Video     |
 |:--------------------:|
 | [![Bill](http://img.youtube.com/vi/hzUxZ9pi5N4/0.jpg)](http://www.youtube.com/watch?v=hzUxZ9pi5N4 "Bill")|
