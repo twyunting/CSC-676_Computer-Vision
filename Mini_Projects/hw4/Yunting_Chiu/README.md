@@ -304,15 +304,15 @@ How can we solve the problem if the motion is multidirectional? If there are sev
 
 | Original Video              
 |:--------------------:|
-|![](https://www.youtube.com/embed/hzUxZ9pi5N4)|
+|![(pics/bill.png)](https://www.youtube.com/embed/hzUxZ9pi5N4)|
 
 |  10x magnification  |
 |:--------------------:|
-|![](https://www.youtube.com/embed/ectPLbRTi70)|
+|![(pics/bill.png)](https://www.youtube.com/embed/ectPLbRTi70)|
 
 | 30x magnification |
 |:--------------------:|
-|![](https://www.youtube.com/embed/WMnWmumxyLs)|
+|![(pics/bill.png)](https://www.youtube.com/embed/WMnWmumxyLs)|
 
 
 I was able to magnify the video called Bill by 10x and 30x. ABecause the running time of this video is not too long, the code can be worked on smoothly. I attempted to use HD video even or 4K video for motion magnification, but running these code above consumes a lot of RAM, which takes a long time and causes the code to fail. As a result, I only focus on low-quality videos as a remedy.
