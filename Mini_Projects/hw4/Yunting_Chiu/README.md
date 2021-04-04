@@ -302,9 +302,8 @@ How can we solve the problem if the motion is multidirectional? If there are sev
 
 ### Results in a table
 
-
 <iframe width="100%" height="500" 
-src="https://www.youtube.com/embed/hzUxZ9pi5N4">
+src="https://www.youtube.com/embed/hzUxZ9pi5N4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe> 
 
 <iframe width="100%" height="500" 
