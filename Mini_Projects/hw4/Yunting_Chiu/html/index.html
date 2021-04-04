@@ -140,14 +140,14 @@ td img {
 
 <div style="float: right; padding: 20px">
 <img src="../pics/temporalGuss.png" />
-<p style="font-size: 16px" align="center">Applying temporal Gaussian filter to amplify videos.</p>
+<p style="font-size: 16px" align="center">Applying temporal Gaussian filter to amplify videos</p>
 </div>
 
 <p> In this task, we will look at video motion magnification. Keep in mind that phase changes in the frequency domain of the Fourier transform lead to location shifts in image space. This implies that the phase shift between two images can be calculated by comparing their Fourier transforms. After the inverse Fourier transform, magnifying the phase change by a fixed factor in the Fourier transform frequency domain would amplify the position shift by the same factor in the image domain. This idea can be used in videos to exaggerate movements.</p>
 
 
 <h2>Magnify Change</h2>
-<p>Firstly, we compute the prase shift between img2 to img 1 in the Fourier transform domain as phaseShift. Second, we utilize the position of the origin image to time the exponential of `magnificationFactor` x `phaseShift` x complex number, which magnifies the phase change in frequency domain (`magnifiedDft`). Thirdly, we inverse `magnifiedDft` and keep the real part to get the magnified image as magnified. </p>
+<p>Firstly, we compute the phase shift between img2 to img 1 in the Fourier transform domain as phaseShift. Second, we utilize the position of the origin image to time the exponential of `magnificationFactor` x `phaseShift` x complex number, which magnifies the phase change in frequency domain (`magnifiedDft`). Thirdly, we inverse `magnifiedDft` and keep the real part to get the magnified image as magnified. </p>
 
 <pre><code># install the libraries
 %matplotlib inline
@@ -307,7 +307,7 @@ imshow(magnified); plt.title('magnified');
 <div style="clear:both">
 <h2>Appling Motion Magnification to a Video</h2>
 
-<p>Read frames from the video on Google Colab</p>
+<p>Read the video on Google Colab</p>
 
 <pre><code>import numpy as np
 import cv2
@@ -456,6 +456,10 @@ src="https://www.youtube.com/embed/WMnWmumxyLs">
 
 
 <p>I was able to magnify the video called Bill by 10x and 30x. ABecause the running time of this video is not too long, the code can be worked on smoothly. I attempted to use HD video even or 4K video for motion magnification, but running these code above consumes a lot of RAM, which takes a long time and causes the code to fail. As a result, I only focus on low-quality videos as a remedy.</p>
+
+<h3>Conclusion</h3>
+The thorny problem is that the original code has four layers for loops (frames, width, height, channel), which causes the code to fail on CoLab and locally. I tried many low-quality videos (less than 1MB), but the RAM was full. One solution for processing large videos is to upgrade to CoLab pro or to consider GPU resources.
+
 
 <h3>Reference</h3>
 <p><li>Wadhwa, N., Rubinstein, M., Durand, F., & Freeman, W. (2013). Phase-based video motion processing. <l>ACM Transactions on Graphics, 32</l>(4), 1–10. https://doi.org/10.1145/2461912.2461966</li></p>
