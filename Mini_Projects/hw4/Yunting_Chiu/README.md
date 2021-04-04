@@ -302,9 +302,9 @@ How can we solve the problem if the motion is multidirectional? If there are sev
 
 ### Results in a table
 
-![](https://youtu.be/hzUxZ9pi5N4)|
+![](pics/bill.png)(https://youtu.be/hzUxZ9pi5N4)|
 
-![](https://youtu.be/WMnWmumxyLs)|
+![(pics/bill.png)](https://youtu.be/WMnWmumxyLs)|
 
 ![](https://youtu.be/WMnWmumxyLs)|
 
